@@ -1,0 +1,25 @@
+# ── Web Framework & WSGI Server ───────────────────────────────────────────────
+# Flask 3.x is fully supported on Python 3.9–3.11 (Render's runtime)
+Flask>=3.0.0
+gunicorn>=21.2.0
+Werkzeug>=3.0.0
+
+# ── Scientific Computing ──────────────────────────────────────────────────────
+numpy>=1.24.0,<2.0.0
+scikit-learn>=1.3.0
+
+# ── Deep Learning ─────────────────────────────────────────────────────────────
+# TensorFlow is extremely large (~500MB+) and often causes pip build timeouts or
+# OOM failures on free cloud environments (like Render's 512MB free tier).
+# By default, tensorflow is commented out below so the app builds instantly.
+# The app automatically uses the lightweight scikit-learn MLP fallback (equally accurate, uses <20MB).
+# Uncomment the line below if you are running locally or on a paid cloud instance.
+# tensorflow>=2.13.0,<2.16.0
+
+# ── Computer Vision ───────────────────────────────────────────────────────────
+# Headless build — no GUI/display dependencies (required for Render/cloud).
+opencv-python-headless>=4.8.0
+
+# ── Hand Tracking (server-side video analysis) ────────────────────────────────
+# MediaPipe is no longer needed on the backend (video processing has been moved to client-side).
+# mediapipe>=0.10.0,<0.11.0

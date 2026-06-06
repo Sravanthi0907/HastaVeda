@@ -1,0 +1,561 @@
+{% extends 'base.html' %}
+
+{% block title %}HastaVeda{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="py-5 text-center bg-cream border-bottom border-bronze curtain-reveal">
+    <div class="container">
+        <h1 class="brand-title text-uppercase mb-3">Learn Mudras</h1>
+        <p class="lead text-muted max-width-800 mx-auto">
+            Explore the 28 classical hand gestures of Bharatanatyam. Click on each card to learn the meaning, symbolism,
+            and how to perform it correctly.
+        </p>
+        <div class="divider-mandala">
+            <i class="fa-solid fa-bahai"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Flashcard Grid Section -->
+<section class="py-5 container">
+    <div class="row">
+        <!-- 1. Pataka -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/pataka.jpg" alt="Pataka Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Pataka</div>
+                    <div class="text-gold pb-1">(The Flag)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h4>PATAKA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Flag". Shows power and triumph.
+                    </div>
+
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Hold your hand up at chest level</li>
+                            <li>Extend all fingers straight and close together</li>
+                            <li>Bend your thumb slightly inward</li>
+                        </ol>
+                    </div>
+
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Keep fingers rigid and together</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Splaying fingers apart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Mushti -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/mushti.jpg" alt="Mushti Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Mushti</div>
+                    <div class="text-gold pb-1">(The Fist)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h4>MUSHTI</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Fist". Shows strength and power.
+                    </div>
+
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Curl all four fingers into your palm tightly</li>
+                            <li>Place your thumb firmly over the middle fingers</li>
+                        </ol>
+                    </div>
+
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Keep the fist firm but wrist relaxed</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Sticking thumb straight up</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Shikara -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/shikara.jpg" alt="Shikara Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Shikara</div>
+                    <div class="text-gold pb-1">(The Peak)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h4>SHIKARA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Peak". Represents mountains and authority.
+                    </div>
+
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Make a tight fist (Mushti)</li>
+                            <li>Extend only your thumb straight upward</li>
+                        </ol>
+                    </div>
+
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Thumb must be perfectly rigid and vertical
+                        </p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Fingers slipping open from the fist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Chandrakala -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/chandrakala.jpg" alt="Chandrakala Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Chandrakala</div>
+                    <div class="text-gold pb-1">(Crescent Moon)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h4>CHANDRAKALA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Crescent Moon". Represents the moon and beauty.
+                    </div>
+
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Curl middle, ring, and pinky into palm</li>
+                            <li>Point index finger straight up</li>
+                            <li>Extend thumb out to the side (90 degrees)</li>
+                        </ol>
+                    </div>
+
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Form a perfect 90-degree angle between
+                            fingers</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Thumb drooping or fingers lifting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Mrigasirsha -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/migasirsha.jpg" alt="Mrigasirsha Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Mrigasirsha</div>
+                    <div class="text-gold pb-1">(Deer Head)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h4>MRIGASIRSHA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Deer Head". Represents grace and gentleness.
+                    </div>
+
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Start with flat palm (Pataka)</li>
+                            <li>Bend middle three fingers forward at 90 degrees</li>
+                            <li>Keep thumb and pinky pointing straight up like ears</li>
+                        </ol>
+                    </div>
+
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Make middle fingers flat and horizontal</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Thumb or pinky curling inward</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Alapadma -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/alapadma.jpg" alt="Alapadma Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Alapadma</div>
+                    <div class="text-gold pb-1">(Bloomed Lotus)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h4>ALAPADMA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Bloomed Lotus". Represents beauty and the sun.
+                    </div>
+
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Splay all five fingers wide apart</li>
+                            <li>Curl fingers backward slightly</li>
+                            <li>Create a blooming flower shape with your hand</li>
+                        </ol>
+                    </div>
+
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Push knuckles forward, pull fingertips back
+                        </p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Keeping fingers straight like an open palm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Samyuta (Anjali) -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/anjali.jpg" alt="Samyuta Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Anjali</div>
+                    <div class="text-gold pb-1">(Combined Hands)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h4>ANJALI</h4>
+                    <span class="badge-mudra text-center">Double-Hand</span>
+
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Salutation" or "Offering". Represents respect, prayer, and
+                        greeting.
+                    </div>
+
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Bring both palms together at the chest</li>
+                            <li>Keep fingers pointing upward and together</li>
+                            <li>Press palms firmly and evenly against each other</li>
+                        </ol>
+                    </div>
+
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Keep elbows slightly lifted and wrists
+                            close to the chest</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Letting fingers splay apart or palms
+                            separate unevenly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 8. Tripataka -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/tripataka.jpg" alt="Tripataka Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Tripataka</div>
+                    <div class="text-gold pb-1">(Three Parts of Flag)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>TRIPATAKA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Three Parts of a Flag". Represents fire and a crown.
+                    </div>
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Start with Pataka (flat hand)</li>
+                            <li>Bend only the ring finger down to touch the palm</li>
+                            <li>Keep all other fingers straight and together</li>
+                        </ol>
+                    </div>
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Ring finger must press firmly against the
+                            palm</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Bending other fingers along with the ring
+                            finger</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. Ardhapataka -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/Ardhapataka.jpg" alt="Ardhapataka Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Ardhapataka</div>
+                    <div class="text-gold pb-1">(Half Flag)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>ARDHAPATAKA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Half Flag". Represents a knife, two leaves, or a banner.
+                    </div>
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Start with Tripataka hand</li>
+                            <li>Bend ring and little finger down together</li>
+                            <li>Keep index and middle finger straight and together</li>
+                        </ol>
+                    </div>
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Two extended fingers must stay tightly
+                            pressed together</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Spreading the two raised fingers apart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. Kartarimukha -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/Kartarimukha.jpg" alt="Kartarimukha Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Kartarimukha</div>
+                    <div class="text-gold pb-1">(Scissors / Arrow)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>KARTARIMUKHA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Scissors Face". Represents separation, opposition, or an arrow.
+                    </div>
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Start with Ardhapataka</li>
+                            <li>Spread index and middle fingers apart like scissors</li>
+                            <li>Curl ring and pinky into palm, thumb tucked</li>
+                        </ol>
+                    </div>
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Create a wide, even V-shape between the two
+                            fingers</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Letting the curled fingers slip open</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. Ardhachandra -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/ardhachandra.jpg" alt="Ardhachandra Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Ardhachandra</div>
+                    <div class="text-gold pb-1">(Half Moon)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>ARDHACHANDRA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Half Moon". Represents the moon, prayer, or salutation.
+                    </div>
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Start with Pataka (flat palm)</li>
+                            <li>Spread thumb wide away from fingers</li>
+                            <li>Keep all four fingers straight and together</li>
+                        </ol>
+                    </div>
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Thumb should stretch as far as possible
+                            from index finger</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Bending or curling any of the four fingers
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. Shukatunda -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/Shukatunda.jpg" alt="Shukatunda Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Shukatunda</div>
+                    <div class="text-gold pb-1">(Parrot Beak)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>SHUKATUNDA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Parrot's Beak". Represents shooting an arrow or a parrot.
+                    </div>
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Make a fist (Mushti)</li>
+                            <li>Extend the index finger straight forward</li>
+                            <li>Keep thumb pressing over the middle fingers</li>
+                        </ol>
+                    </div>
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> Index finger should point directly forward
+                            like an arrow</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Pointing the finger upward instead of
+                            forward</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14. Padmakosha -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/Padmakosha.jpg" alt="Padmakosha Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Padmakosha</div>
+                    <div class="text-gold pb-1">(Lotus Bud)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>PADMAKOSHA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Lotus Bud". Represents a flower, a round fruit, or a bell.
+                    </div>
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Spread all five fingers apart</li>
+                            <li>Curve all fingers and thumb inward gently</li>
+                            <li>Create a rounded cupped shape like a blooming bud</li>
+                        </ol>
+                    </div>
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> All fingers should curve equally to form a
+                            smooth bowl</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Closing fingers too tight like a fist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 15. Hamsasya -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/Hamsasya.jpg" alt="Hamsasya Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Hamsasya</div>
+                    <div class="text-gold pb-1">(Swan's Beak)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>HAMSASYA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Swan's Face". Represents a flower, painting, or stringing
+                        beads.
+                    </div>
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Bring all four fingertips together to meet the thumb tip</li>
+                            <li>Point the joined fingertips forward like a beak</li>
+                            <li>Keep a slight hollow space inside the hand</li>
+                        </ol>
+                    </div>
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> All five tips must meet at a single point
+                            precisely</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Letting any finger lag behind the others
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 18. Mukula -->
+        <div class="col-lg-4 col-md-6 flip-card-container">
+            <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-front">
+                    <img src="static/images/mudras/Mukula.jpg" alt="Mukula Mudra"
+                        onerror="this.src='https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=400';">
+                    <div class="mudra-title">Mukula</div>
+                    <div class="text-gold pb-1">(Flower Bud)</div>
+                    <div class="flip-hint"><i class="fa-solid fa-hand-pointer me-1"></i> Tap to learn more</div>
+                </div>
+                <div class="flip-card-back">
+                    <h4>MUKULA</h4>
+                    <span class="badge-mudra text-center">Single-Hand</span>
+                    <div class="back-section">
+                        <strong>What it means:</strong> "Bud". Represents an unopened flower or offering food to a
+                        deity.
+                    </div>
+                    <div class="back-section">
+                        <strong>How to do it:</strong>
+                        <ol>
+                            <li>Bring all five fingertips together at a single point</li>
+                            <li>Keep the palm slightly open and rounded below</li>
+                            <li>Hold the shape pointing upward like a closed bud</li>
+                        </ol>
+                    </div>
+                    <div class="back-section">
+                        <p class="text-success mb-1"><strong>✓ Tip:</strong> The palm should feel hollow like cupping
+                            water</p>
+                        <p class="text-danger mb-0"><strong>✗ Avoid:</strong> Squeezing fingertips so tight the palm
+                            flattens</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
+{% endblock %}

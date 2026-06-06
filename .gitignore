@@ -1,0 +1,57 @@
+# ── Python Cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# ── Virtual Environments ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Uploaded Videos (temporary, server-generated) ─────────────────────────────
+static/uploads/*
+!static/uploads/.gitkeep
+
+# ── IDE Configs ───────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# ── Local Secrets & System Files ─────────────────────────────────────────────
+.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# ── System/Tool Caches ────────────────────────────────────────────────────────
+.sixth/
+scratch/
+
+# ── Build & Distribution Artifacts ───────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+*.dist-info/
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+gunicorn.log
+
+# ── NOTE: DO NOT gitignore these deployment files ─────────────────────────────
+# runtime.txt   ← Render uses this to choose Python 3.11
+# render.yaml   ← Render uses this for Blueprint deploys
+# Procfile      ← Render/Heroku start command
+
+# ── Large Training Data (commit only AFTER running reduce_photos.py) ──────────
+# The mudra_data/ folder itself IS committed (contains model + 20 sample images).
+# If you have >20 images per mudra folder, run reduce_photos.py first.
+
+# Exclude the large pre-training samples backup if present
+mudra_data/mudra_samples_backup.json

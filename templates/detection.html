@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+
+{% block title %}HastaVeda{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container text-center">
+        <h1 class="brand-title text-uppercase mb-2"> Practice Studio</h1>
+        <p class="text-muted mb-0">Practice your mudras live with your webcam or analyze recorded videos.</p>
+    </div>
+</section>
+
+<div class="container py-5">
+    <!-- Navigation Tabs -->
+    <div class="d-flex justify-content-center w-100">
+        <ul class="nav nav-pills nav-pills-bharata justify-content-center mb-0" id="practiceTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded-pill" id="webcam-tab" data-bs-toggle="pill"
+                    data-bs-target="#webcam-pane" type="button" role="tab" aria-controls="webcam-pane"
+                    aria-selected="true">
+                    <i class="fa-solid fa-video me-2"></i> Live Webcam
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-pill" id="upload-tab" data-bs-toggle="pill"
+                    data-bs-target="#upload-pane" type="button" role="tab" aria-controls="upload-pane"
+                    aria-selected="false">
+                    <i class="fa-solid fa-cloud-arrow-up me-2"></i> Upload Video
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tabs Content Container -->
+    <div class="tab-content tab-content-bharata" id="practiceTabsContent">
+
+
+        <!-- Tab 1: Live Webcam -->
+        <div class="tab-pane fade show active" id="webcam-pane" role="tabpanel" aria-labelledby="webcam-tab"
+            tabindex="0">
+            <h3 class="brand-title border-bottom pb-2 mb-4 text-center">Live Detection</h3>
+            <div class="row">
+                <!-- Video Feed Column -->
+                <div class="col-lg-7 mb-4 mb-lg-0 text-center">
+                    <div class="video-wrapper">
+                        <!-- Camera Feed -->
+                        <video id="webcamVideo" class="video-element" autoplay playsinline muted></video>
+                        <!-- Skeleton Drawing Layer -->
+                        <canvas id="skeletonCanvas" class="canvas-element"></canvas>
+
+                        <!-- Video overlay indicators -->
+                        <div id="loadingSpinner"
+                            class="position-absolute top-50 start-50 translate-middle d-none text-center">
+                            <span class="loader-indian d-block mb-3"></span>
+                            <span class="text-gold fw-bold bg-maroon px-3 py-1 rounded border border-gold">Initializing
+                                AI Models...</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                        <button id="btnStartWebcam" class="btn btn-gold px-4 rounded-pill"><i
+                                class="fa-solid fa-play me-2"></i> Start Camera</button>
+                        <button id="btnStopWebcam" class="btn btn-crimson btn-lg rounded-pill" disabled><i
+                                class="fa-solid fa-stop me-2"></i> Stop Camera</button>
+                    </div>
+                </div>
+
+                <!-- Live Metrics Column -->
+                <div class="col-lg-5 dashboard-metrics">
+
+                    <!-- Royal Mudra Box -->
+                    <div class="royal-detection-card">
+                        <div class="card-border-header">━━━━━━━━━━━━━━━<br>Current Mudra<br>━━━━━━━━━━━━━━━</div>
+                        <div id="liveMudraName" class="mudra-display-value">Waiting...</div>
+
+                        <div class="mb-3 text-center">
+                            <span id="liveMudraStatus" class="badge bg-secondary px-3 py-2 rounded-pill fs-6">Waiting
+                                for Camera</span>
+                        </div>
+
+                        <div class="confidence-label">Confidence</div>
+                        <div id="liveMudraConf" class="fw-bold fs-4 mb-2">0%</div>
+                        <div class="gold-progress mb-3">
+                            <div id="liveMudraBar" class="gold-progress-bar"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Video Upload -->
+        <div class="tab-pane fade" id="upload-pane" role="tabpanel" aria-labelledby="upload-tab" tabindex="0">
+            <!-- 1. Initial State: Upload Form & Placeholder -->
+            <div id="uploadInitialState" class="row justify-content-center">
+                <h3 class="brand-title border-bottom pb-2 mb-4 text-center">Analyze Recorded Performance</h3>
+                <!-- Video upload interface column -->
+                <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+
+                    <p class="text-muted">
+                        Upload an MP4, AVI, or MOV video of your practice. Our AI will analyze it frame-by-frame and
+                        show your mudra predictions.
+                    </p>
+
+                    <!-- Upload Form Container -->
+                    <div class="p-4 rounded-5 border-bronze bg-ivory text-center my-4">
+                        <form id="videoUploadForm">
+                            <div class="mb-4">
+                                <i class="fa-solid fa-file-video text-gold fa-4x mb-3 animate-glow"></i>
+                                <label for="videoFileInput" class="form-label d-block fw-bold">Select Your Video</label>
+                                <input class="form-control" type="file" id="videoFileInput" accept=".mp4,.avi,.mov"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-gold btn-lg w-100 rounded-pill"><i
+                                    class="fa-solid fa-upload me-2"></i> Upload & Analyze</button>
+                        </form>
+                    </div>
+
+                    <!-- Processing Progress UI -->
+                    <div id="uploadProgressContainer" class="d-none mt-4 p-4 rounded-5 border-bronze bg-ivory">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <strong id="progressStatusText"><i class="fa-solid fa-cog fa-spin me-2"></i>
+                                Processing...</strong>
+                            <div class="d-flex align-items-center gap-3">
+                                <span id="elapsedTimeDisplay" class="elapsed-timer"><i
+                                        class="fa-regular fa-clock me-1"></i> 0:00</span>
+                                <span id="progressPercentage" class="fw-bold">0%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div id="uploadProgressBar"
+                                class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                role="progressbar"></div>
+                        </div>
+                        <p class="text-muted mt-2 mb-0">Please wait while we analyze your video...</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2. Results State: Playback, Live metrics, & Timeline (side-by-side) -->
+            <div id="uploadResultsState" class="d-none mt-3">
+                <div class="row">
+                    <!-- Video player & static stats -->
+                    <div class="col-lg-7 mb-4 text-center">
+                        <h3 class="brand-title mb-3 text-start text-uppercase text-center">Annotated Playback</h3>
+
+                        <div class="video-wrapper shadow border rounded">
+                            <video id="processedVideoPlayer" class="video-element" controls></video>
+                            <canvas id="videoSkeletonCanvas" class="canvas-element"></canvas>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button id="btnUploadAnother" class="btn btn-crimson btn-lg rounded-pill"><i
+                                    class="fa-solid fa-stop me-2"></i> Upload Another</button>
+                        </div>
+                    </div>
+
+                    <!-- Live prediction display & Interactive Timeline -->
+                    <div class="col-lg-5 dashboard-metrics">
+
+                        <h3 class="brand-title border-bottom pb-2 mb-4 text-center">Video Analysis</h3>
+
+                        <!-- Royal Mudra Box -->
+                        <div class="royal-detection-card mb-4">
+                            <div class="card-border-header">━━━━━━━━━━━━━━━<br>Current Mudra<br>━━━━━━━━━━━━━━━</div>
+                            <div id="videoMudraName" class="mudra-display-value">Waiting...</div>
+
+                            <div class="mb-3 text-center">
+                                <span id="videoMudraStatus"
+                                    class="badge bg-secondary px-3 py-2 rounded-pill fs-6">Waiting...</span>
+                            </div>
+
+                            <div class="confidence-label">Confidence</div>
+                            <div id="videoMudraConf" class="fw-bold fs-4 mb-2">0%</div>
+                            <div class="gold-progress mb-3">
+                                <div id="videoMudraBar" class="gold-progress-bar"></div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Log Card -->
+                        <div class="card bharata-card shadow">
+                            <div class="bharata-card-header py-2">
+                                <h6 class="mb-0 text-uppercase text-center"> Detection Timeline</h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div id="videoTimelineContainer">
+                                    <ul class="list-group list-group-flush" id="videoTimelineLog">
+                                        <li class="list-group-item text-center text-muted py-3 bg-transparent border-0">
+                                            No detections recorded</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- Load official Google MediaPipe Library CDNs -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+<!-- Live Webcam Engine Script -->
+<script src="{{ url_for('static', filename='js/webcam.js') }}"></script>
+<!-- Offline Video Upload Processing Script -->
+<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+{% endblock %}

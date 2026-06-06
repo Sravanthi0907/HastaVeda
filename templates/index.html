@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}HastaVeda{% endblock %}
+
+{% block content %}
+<!-- Hero Banner Section -->
+<section class="hero-section text-center curtain-reveal">
+    <div class="container position-relative z-1">
+        <div class="floating-motif mb-3">
+            <i class="fa-solid fa-om text-gold animate-glow"></i>
+        </div>
+        <h1 class="hero-title text-uppercase mb-1">HastaVeda</h1>
+        <div class="subheading-garamond text-gold mb-3">AI-Powered Classical Bharatanatyam Learning Studio</div>
+        <p class="hero-subtitle mb-4 text-uppercase">
+            Perfect Your Hand Gestures with AI Guidance
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{{ url_for('detect') }}" class="btn btn-gold btn-lg rounded-pill">
+                <i class="fa-solid fa-play me-2"></i> Start Practice
+            </a>
+            <a href="{{ url_for('learn') }}" class="btn btn-crimson btn-lg rounded-pill">
+                <i class="fa-solid fa-book-open me-2"></i> Learn Mudras
+            </a>
+        </div>
+
+        <!-- Glowing Floating Diyas -->
+        <div class="diya-container mt-5">
+            <div class="diya-lamp"></div>
+            <div class="diya-lamp"></div>
+            <div class="diya-lamp"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="py-5 container curtain-reveal">
+    <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0 text-center">
+            <div class="p-3 border border-gold rounded-5 shadow-lg bg-cream position-relative">
+                <img src="static\images\nataraja_bg.jpg" alt="Bharatanatyam Recital"
+                    class="img-fluid rounded-5 shadow-sm">
+            </div>
+        </div>
+        <div class="col-lg-6 px-lg-5 text-start">
+            <h2 class="brand-title mb-2 text-center">The Sacred Language of Hands</h2>
+            <p>Every gesture tells a story. Every story lives in your hands.</p>
+
+            <div class="divider-mandala">
+                <i class="fa-solid fa-bahai"></i>
+            </div>
+
+            <p>
+                Hasta Mudras are the soul of Bharatanatyam — a visual language born thousands of years ago, where the
+                hands become storytellers. Rooted in the ancient Sanskrit treatise <em>Abhinaya Darpana</em>, each
+                gesture carries centuries of meaning, transforming movement into emotion, and emotion into art.
+            </p>
+
+            <h5 class="brand-title mb-2">Meet HastaVeda</h5>
+            <p>
+                An AI-powered learning companion that recognizes Bharatanatyam Hasta Mudras in real time and helps
+                improve your practice.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 container text-center curtain-reveal">
+    <h2 class="brand-title mb-2"></i> Why Practice with Us</h2>
+    <p class="text-muted mb-5">Learn at your own pace with intelligent feedback</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Card 1 -->
+        <div class="col">
+            <div class="card bharata-card border-top-gold p-3 h-100">
+                <div class="card-body">
+                    <div class="mb-3 text-gold"><i class="fa-solid fa-video fa-2x"></i></div>
+                    <h5 class="fw-bold mb-2">Live Practice</h5>
+                    <p class="text-muted">
+                        Use your webcam to practice and get instant feedback on your mudras.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col">
+            <div class="card bharata-card border-top-gold p-3 h-100">
+                <div class="card-body">
+                    <div class="mb-3 text-gold"><i class="fa-solid fa-brain fa-2x"></i></div>
+                    <h5 class="fw-bold mb-2">Smart AI</h5>
+                    <p class="text-muted">
+                        Advanced AI recognizes your hand positions and tells you if they're correct.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col">
+            <div class="card bharata-card border-top-gold p-3 h-100">
+                <div class="card-body">
+                    <div class="mb-3 text-gold"><i class="fa-solid fa-book-open fa-2x"></i></div>
+                    <h5 class="fw-bold mb-2">Learn & Study</h5>
+                    <p class="text-muted">
+                        Interactive flashcards teach you each mudra step-by-step with easy instructions.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col">
+            <div class="card bharata-card border-top-gold p-3 h-100">
+                <div class="card-body">
+                    <div class="mb-3 text-gold"><i class="fa-solid fa-user-check fa-2x"></i></div>
+                    <h5 class="fw-bold mb-2">Practice Anytime</h5>
+                    <p class="text-muted">
+                        Practice whenever you want, wherever you want. No instructor needed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Practice CTA Section -->
+<section class="py-5 text-center container curtain-reveal">
+    <div class="gold-ornate-border rounded-5 p-5 my-4 bg-cream shadow-sm">
+        <h3 class="brand-title mb-3"></i> Start Practicing Now</h3>
+        <p class="lead mb-4 mx-auto">
+            Use your webcam or upload a video to practice mudras and get live feedback.
+        </p>
+        <a href="{{ url_for('learn') }}" class="btn btn-crimson btn-lg rounded-pill">
+            <i class="fa-solid fa-play me-2"></i> Begin Practice
+        </a>
+    </div>
+</section>
+{% endblock %}
